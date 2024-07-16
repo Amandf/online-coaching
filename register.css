@@ -1,35 +1,40 @@
-*{
+* {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
 }
-body{
-    font-family: 'Outfit';
-    background: linear-gradient(#ffdad5,#fff7f9);
+
+body {
+    font-family: 'Outfit', sans-serif;
+    background: linear-gradient(#ffdad5, #fff7f9);
 }
 
-.contact-container{
-    height: 100vh;
+.contact-container {
+    min-height: 100vh;
     display: flex;
     align-items: center;
-    justify-content: space-evenly;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding: 20px;
 }
 
-.contact-left{
+.contact-left {
     display: flex;
     flex-direction: column;
     align-items: start;
     gap: 20px;
+    max-width: 100%;
+    flex: 1 1 400px;
 }
 
-.contact-left-title h2{
+.contact-left-title h2 {
     font-weight: 600;
     color: #a363aa;
     font-size: 40px;
     margin-bottom: 5px;
 }
 
-.contact-left-title hr{
+.contact-left-title hr {
     border: none;
     width: 120px;
     height: 5px;
@@ -38,8 +43,9 @@ body{
     margin-bottom: 20px;
 }
 
-.contact-inputs{
-    width: 400px;
+.contact-inputs {
+    width: 100%;
+    max-width: 400px;
     height: 50px;
     border: none;
     outline: none;
@@ -49,20 +55,21 @@ body{
     border-radius: 20px;
 }
 
-.contact-left textarea{
+.contact-left textarea {
     height: 140px;
     padding-top: 15px;
     border-radius: 20px;
 }
 
-.contact-inputs:focus{
+.contact-inputs:focus {
     border: 2px solid #ff994f;
 }
 
-.contact-inputs::placeholder{
+.contact-inputs::placeholder {
     color: #a9a9a9;
 }
-.contact-left button{
+
+.contact-left button {
     display: flex;
     align-items: center;
     padding: 15px 30px;
@@ -71,38 +78,44 @@ body{
     gap: 10px;
     border: none;
     border-radius: 50px;
-    background: linear-gradient(270deg, #ff994f,#fa6d86);
+    background: linear-gradient(270deg, #ff994f, #fa6d86);
     cursor: pointer;
 }
 
-.contact-left button img{
+.contact-left button img {
     height: 15px;
 }
 
-.contact-right img{
-    width: 500px;
+.contact-right {
+    flex: 1 1 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
+.contact-right img {
+    width: 100%;
+    max-width: 500px;
+}
 
-
-
-
-
-
-@media (max-width:800px) {
-    .contact-inputs{
-        width: 80vh;
+@media (max-width: 800px) {
+    .contact-left {
+        width: 100%;
+        max-width: none;
     }
-    .contact-right{
+
+    .contact-right {
         display: none;
     }
 }
 
+@media (max-width: 500px) {
+    .contact-left-title h2 {
+        font-size: 30px;
+    }
 
-
-
-
-
-
-
-
+    .contact-left button {
+        padding: 10px 20px;
+        font-size: 14px;
+    }
+}
